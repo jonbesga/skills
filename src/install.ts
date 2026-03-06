@@ -65,6 +65,7 @@ export async function runInstallFromLock(args: string[]): Promise<void> {
         skill: skills,
         agent: universalAgentNames,
         yes: true,
+        global: true
       });
     } catch (error) {
       p.log.error(

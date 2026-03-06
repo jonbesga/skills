@@ -165,7 +165,7 @@ export function parseSource(input: string): ParsedSource {
     const [, owner, repo, ref, subpath] = githubTreeWithPathMatch;
     return {
       type: 'github',
-      url: `https://github.com/${owner}/${repo}.git`,
+      url: `git@github.com:${owner}/${repo}.git`,
       ref,
       subpath: subpath ? sanitizeSubpath(subpath) : subpath,
     };
@@ -177,7 +177,7 @@ export function parseSource(input: string): ParsedSource {
     const [, owner, repo, ref] = githubTreeMatch;
     return {
       type: 'github',
-      url: `https://github.com/${owner}/${repo}.git`,
+      url: `git@github.com:${owner}/${repo}.git`,
       ref,
     };
   }
@@ -189,7 +189,7 @@ export function parseSource(input: string): ParsedSource {
     const cleanRepo = repo!.replace(/\.git$/, '');
     return {
       type: 'github',
-      url: `https://github.com/${owner}/${cleanRepo}.git`,
+      url: `git@github.com:${owner}/${cleanRepo}.git`,
     };
   }
 
@@ -247,7 +247,7 @@ export function parseSource(input: string): ParsedSource {
     const [, owner, repo, skillFilter] = atSkillMatch;
     return {
       type: 'github',
-      url: `https://github.com/${owner}/${repo}.git`,
+      url: `git@github.com:${owner}/${repo}.git`,
       skillFilter,
     };
   }
@@ -257,7 +257,7 @@ export function parseSource(input: string): ParsedSource {
     const [, owner, repo, subpath] = shorthandMatch;
     return {
       type: 'github',
-      url: `https://github.com/${owner}/${repo}.git`,
+      url: `git@github.com:${owner}/${repo}.git`,
       subpath: subpath ? sanitizeSubpath(subpath) : subpath,
     };
   }

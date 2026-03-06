@@ -2,7 +2,7 @@ import { readFile, writeFile, readdir, stat } from 'fs/promises';
 import { join, relative } from 'path';
 import { createHash } from 'crypto';
 
-const LOCAL_LOCK_FILE = 'skills-lock.json';
+const LOCAL_LOCK_FILE = '.skill-lock.json';
 const CURRENT_VERSION = 1;
 
 /**
